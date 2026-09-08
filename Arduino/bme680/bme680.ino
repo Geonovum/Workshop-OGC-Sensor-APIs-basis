@@ -23,7 +23,7 @@
 
 #include <HTTPClient.h>  // ships with ESP32 library, no extra lib needed
 
-const char* serviceHost = "http://iot.aardvark.myds.me/FROST-Server";
+const char* serviceHost = "https://xxxx/FROST-Server";
 const char* serviceVersion = "v1.1";
 
 HTTPClient http;
@@ -160,10 +160,8 @@ void loop() {
   transmitValue(bme.temperature, "*C", 10);
   transmitValue(bme.pressure / 100.0, "hPa", 10);
   transmitValue(bme.humidity, "%", 10);
-  transmitValue(bme.gas_resistance / 1000.0, "KOhms", 10);
   transmitValue(bme.readAltitude(SEALEVELPRESSURE_HPA), "m", 10);
 
   Serial.println();
   delay(2000);
-
 }
