@@ -1,0 +1,34 @@
+meta {
+  name: Top
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{Endpoint}}/Observations?$top=5
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $top: 5
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}
+
+docs {
+  # top
+  
+  Use $top query option to limit the number of requested entities.
+  
+  
+  | Query | Options | Description |
+  
+  |-----|-----|-----|
+  
+  | $top | non-negative integer value | Specifies a non-negative integer that limits the number of entities returned within a collection. The service must return the number of available entities up to, but not exceeding, the specified value.|
+}

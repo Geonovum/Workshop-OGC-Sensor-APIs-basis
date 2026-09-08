@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor AHT-21B
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "AHT-21B",
+    "description": "Temperatuur- en Luchtvochtigheidssensor Module",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.tinytronics.nl/product_files/003863_aht21b-temperature-and-humidity-sensor-datasheet.pdf"
+  }
+}

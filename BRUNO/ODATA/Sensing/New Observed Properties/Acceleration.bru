@@ -1,0 +1,23 @@
+meta {
+  name: Acceleration
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Acceleration",
+    "description": "Acceleration is the (instantaneous) rate of change of velocity.",
+    "definition": "https://qudt.org/vocab/quantitykind/Acceleration"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

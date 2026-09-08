@@ -1,0 +1,19 @@
+meta {
+  name: Speed
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Speed",
+    "definition": "Speed is the magnitude of velocity",
+    "description": "https://qudt.org/vocab/quantitykind/Speed"
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor MAX-4466
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "MAX-4466",
+    "description": "Microfoon Versterker Module met Microfoon",
+    "encodingType": "application/pdf",
+    "metadata": "https://cdn-shop.adafruit.com/datasheets/MAX4465-MAX4469.pdf"
+  }
+}

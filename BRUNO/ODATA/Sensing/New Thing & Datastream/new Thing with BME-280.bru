@@ -1,0 +1,108 @@
+meta {
+  name: new Thing with BME-280
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "00:00:00",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "Locations": [
+      {
+        "name": "Vaalserberg",
+        "description": "Hoogste punt NL",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            6.020759,
+            50.754699
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+      {
+        "name": "Air Temperature DS",
+        "description": "Datastream for recording temperature",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Degree Celsius",
+          "symbol": "°C",
+          "definition": "https://qudt.org/vocab/unit/DEG_C"
+        },
+        "Sensor": {
+          "name": "ADXL-345",
+          "description": "Digitale 3-axis Accelerometer",
+          "encodingType": "application/pdf",
+          "metadata": "https://www.tinytronics.nl/product_files/000256_ADXL345.pdf",
+          "Datastreams@iot.navigationLink": "https://stapi.delathouwer.me/FROST-Server/v1.1/Sensors(1)/Datastreams",
+          "MultiDatastreams@iot.navigationLink": "https://stapi.delathouwer.me/FROST-Server/v1.1/Sensors(1)/MultiDatastreams"
+        },
+        "ObservedProperty": {
+          "name": "Temperature",
+          "definition": "https://qudt.org/vocab/quantitykind/Temperature",
+          "description": "The degree or intensity of heat present in the area",
+          "Datastreams@iot.navigationLink": "https://stapi.delathouwer.me/FROST-Server/v1.1/ObservedProperties(1)/Datastreams",
+          "MultiDatastreams@iot.navigationLink": "https://stapi.delathouwer.me/FROST-Server/v1.1/ObservedProperties(1)/MultiDatastreams"
+        }
+      },
+      {
+        "name": "Rel. Humudity DS",
+        "description": "Datastream for recording Rel. Humudity",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Percent relative humidity",
+          "symbol": "% rH",
+          "definition": "https://qudt.org/vocab/unit/PERCENT_RH"
+        },
+        "Sensor": {
+          "@iot.id": 3
+        },
+        "ObservedProperty": {
+          "@iot.id": 2
+        }
+      },
+      {
+        "name": "Pressure DS",
+        "description": "Datastream for recording Pressure",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Hectopascal",
+          "symbol": "hPa",
+          "definition": "https://qudt.org/vocab/unit/HectoPA"
+        },
+        "Sensor": {
+          "@iot.id": 3
+        },
+        "ObservedProperty": {
+          "@iot.id": 4
+        }
+      },
+      {
+        "name": "Altitude DS",
+        "description": "Datastream for recording altitude",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Meter",
+          "symbol": "m",
+          "definition": "https://qudt.org/vocab/unit/M"
+        },
+        "Sensor": {
+          "@iot.id": 3
+        },
+        "ObservedProperty": {
+          "@iot.id": 3
+        }
+      }
+    ]
+  }
+}

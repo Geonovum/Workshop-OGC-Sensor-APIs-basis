@@ -1,0 +1,15 @@
+meta {
+  name: Observations
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{Endpoint}}/Observations
+  body: none
+  auth: inherit
+}
+
+docs {
+  An Observation is the act of measuring or otherwise determining the value of a property. An Observation in SensorThings represents a single Sensor reading of an ObservedProperty. A physical device, a Sensor, sends Observations to a specified Datastream. An Observation requires a FeatureOfInterest entity, if none is provided in the request, the Location of the Thing associated with the Datastream, will be assigned to the new Observation as the FeatureOfInterest.
+}

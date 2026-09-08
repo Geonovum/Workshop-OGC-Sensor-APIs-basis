@@ -1,0 +1,51 @@
+meta {
+  name: new Thing with TTP-223B
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "?????",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "Locations": [
+      {
+        "name": "xxx",
+        "description": "yyy",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            6.020759,
+            50.754699
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+      {
+        "name": "State DS",
+        "description": "Datastream for recording state",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Open Close",
+          "symbol": "NO",
+          "definition": "https://qudt.org/vocab/unit/State"
+        },
+        "Sensor": {
+          "@iot.id": 14
+        },
+        "ObservedProperty": {
+          "@iot.id": 18
+        }
+      }
+    ]
+  }
+}

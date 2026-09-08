@@ -1,0 +1,23 @@
+meta {
+  name: RelativeHumidity
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "RelativeHumidity",
+    "description": "Relative Humidity is the ratio of the partial pressure of water vapor in an air-water mixture to the saturated vapor pressure of water at a prescribed temperature",
+    "definition": "https://qudt.org/vocab/quantitykind/RelativeHumidity"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

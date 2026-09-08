@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor HX-711
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "HX-711",
+    "description": "Weegschaal",
+    "encodingType": "application/pdf",
+    "metadata": "https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf"
+  }
+}

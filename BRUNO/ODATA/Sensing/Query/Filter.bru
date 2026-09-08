@@ -1,0 +1,26 @@
+meta {
+  name: Filter
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{Endpoint}}/Things?$filter=name eq '58:8C:81:AD:2D:2C'
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $filter: name eq '58:8C:81:AD:2D:2C'
+}
+
+docs {
+  # filter
+  Use $filter query option to perform conditional operations on the property values and filter request result.
+  
+  By default, $filter operations treat the result as a string.
+  If Observations are retrieved as children of a Datastream (e.g., Datastreams(id)/Observations), and that Datastream has an observationType of OM_Measurement, then $filter operations will treat the result as a number.
+  Query	Options	Description
+  $filter	'Property/Function Operator Literal' or Functions	Specify the expression for filtering the result of a request
+  
+}

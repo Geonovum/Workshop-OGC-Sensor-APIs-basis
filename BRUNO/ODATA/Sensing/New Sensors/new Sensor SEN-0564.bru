@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor SEN-0564
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "SEN-0564",
+    "description": "Koolstofmonoxide CO Detectie Sensor",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.tinytronics.nl/product_files/005537_GM-702B-CO-datasheet.pdf"
+  }
+}

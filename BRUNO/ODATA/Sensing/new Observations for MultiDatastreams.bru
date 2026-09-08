@@ -1,0 +1,17 @@
+meta {
+  name: new Observations for MultiDatastreams
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{Endpoint}}/Datastreams(48)/Observations
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "result": 12.34
+  }
+}

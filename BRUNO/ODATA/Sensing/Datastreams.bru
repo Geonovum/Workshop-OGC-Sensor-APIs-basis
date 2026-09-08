@@ -1,0 +1,15 @@
+meta {
+  name: Datastreams
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Endpoint}}/Datastreams
+  body: none
+  auth: inherit
+}
+
+docs {
+  A Datastream groups a collection of Observations measuring the same ObservedProperty and produced by the same Sensor.
+}

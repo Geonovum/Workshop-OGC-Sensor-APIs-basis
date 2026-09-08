@@ -1,0 +1,23 @@
+meta {
+  name: Resistance
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Resistance",
+    "description": "A measure of its opposition to the passage of a steady electric current",
+    "definition": "https://qudt.org/vocab/quantitykind/Resistance"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

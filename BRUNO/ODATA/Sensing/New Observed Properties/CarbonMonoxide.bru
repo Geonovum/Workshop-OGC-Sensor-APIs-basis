@@ -1,0 +1,24 @@
+meta {
+  name: CarbonMonoxide
+  type: http
+  seq: 15
+}
+
+post {
+  url: //       |o  |       GND         BLACK
+{{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Carbon Monoxide",
+    "description": "Gas.",
+    "definition": "https://qudt.org/vocab/quantitykind/CarbonMonoxide"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

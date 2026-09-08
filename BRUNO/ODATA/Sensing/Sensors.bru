@@ -1,0 +1,15 @@
+meta {
+  name: Sensors
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{Endpoint}}/Sensors(1)
+  body: none
+  auth: inherit
+}
+
+docs {
+  A Sensor in SensorThings API is an instrument that observes a property or phenomenon with the goal of producing an estimate of the value of the property.
+}

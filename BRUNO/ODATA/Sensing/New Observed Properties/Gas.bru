@@ -1,0 +1,23 @@
+meta {
+  name: Gas
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Gas",
+    "description": "Concentration gas",
+    "definition": "https://qudt.org/vocab/quantitykind/Gas"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

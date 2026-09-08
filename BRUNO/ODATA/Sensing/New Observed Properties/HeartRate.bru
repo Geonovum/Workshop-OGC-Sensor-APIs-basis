@@ -1,0 +1,23 @@
+meta {
+  name: HeartRate
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "HeartRate",
+    "description": "The number of heartbeats per unit of time.",
+    "definition": "https://qudt.org/vocab/quantitykind/HeartRate"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

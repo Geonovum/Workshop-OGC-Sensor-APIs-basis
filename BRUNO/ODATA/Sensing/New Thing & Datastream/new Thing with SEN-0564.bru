@@ -1,0 +1,51 @@
+meta {
+  name: new Thing with SEN-0564
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "????",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "Locations": [
+      {
+        "name": "xxx",
+        "description": "yyy",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            6.020759,
+            50.754699
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+      {
+        "name": "Gas DS",
+        "description": "Datastream for recording gas",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Percent",
+          "symbol": "%",
+          "definition": "https://qudt.org/vocab/unit/percent"
+        },
+        "Sensor": {
+          "@iot.id": 13
+        },
+        "ObservedProperty": {
+          "@iot.id": 17
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor HW-390
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "HW-390",
+    "description": "Capacitive Soil Moisture",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.tinytronics.nl/product_files/002362_MAT060-B100K-231-A01.pdf"
+  }
+}

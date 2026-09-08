@@ -1,0 +1,23 @@
+meta {
+  name: Angle
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Angle",
+    "description": "The abstract notion of angle.",
+    "definition": "https://www.qudt.org/vocab/quantitykind/Angle"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

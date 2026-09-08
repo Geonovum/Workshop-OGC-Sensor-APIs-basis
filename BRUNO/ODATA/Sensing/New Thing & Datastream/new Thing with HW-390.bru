@@ -1,0 +1,51 @@
+meta {
+  name: new Thing with HW-390
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "????",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "Locations": [
+      {
+        "name": "xxx",
+        "description": "yyy",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            6.020759,
+            50.754699
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+      {
+        "name": "Rel. Humudity DS",
+        "description": "Datastream for recording Rel. Humudity",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Percent relative humidity",
+          "symbol": "% rH",
+          "definition": "https://qudt.org/vocab/unit/PERCENT_RH"
+        },
+        "Sensor": {
+          "@iot.id": 11
+        },
+        "ObservedProperty": {
+          "@iot.id": 2
+        }
+      }
+    ]
+  }
+}

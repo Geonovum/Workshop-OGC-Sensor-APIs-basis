@@ -1,0 +1,51 @@
+meta {
+  name: new Thing with TCS-3200
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "????",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "Locations": [
+      {
+        "name": "xxx",
+        "description": "yyy",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            6.020759,
+            50.754699
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+      {
+        "name": "Color DS",
+        "description": "Datastream for recording color",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Hertz",
+          "symbol": "Hz",
+          "definition": "https://qudt.org/vocab/unit/HZ"
+        },
+        "Sensor": {
+          "@iot.id": 12
+        },
+        "ObservedProperty": {
+          "@iot.id": 8
+        }
+      }
+    ]
+  }
+}

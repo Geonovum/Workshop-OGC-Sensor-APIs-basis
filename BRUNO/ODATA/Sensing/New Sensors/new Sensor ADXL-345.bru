@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor ADXL-345
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "ADXL-345aaa",
+    "description": "Digitale 3-axis Accelerometer",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.tinytronics.nl/product_files/000256_ADXL345.pdf"
+  }
+}

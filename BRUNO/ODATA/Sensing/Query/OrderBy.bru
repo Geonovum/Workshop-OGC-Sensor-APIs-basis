@@ -1,0 +1,29 @@
+meta {
+  name: OrderBy
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Endpoint}}/Observations?$orderby=phenomenonTime
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $orderby: phenomenonTime
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}
+
+docs {
+  # orderby
+  Use $orderby query option to sort the response based on properties of requested entity in accending (asc) or decending (desc) order.
+  
+  # Query	Options	Description
+  $orderby	comma separated list of property names with suffix asc for ascending or desc for descending	Is used to specify which properties are used to order the collection of entities identified by the resource path.
+}

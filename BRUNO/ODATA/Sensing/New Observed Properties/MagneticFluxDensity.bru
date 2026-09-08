@@ -1,0 +1,23 @@
+meta {
+  name: MagneticFluxDensity
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "MagneticFluxDensity",
+    "description": "Magnetic Flux Density is a vector quantity and is the magnetic flux per unit area of a magnetic field at right angles to the magnetic force.",
+    "definition": "https://qudt.org/vocab/quantitykind/MagneticFluxDensity"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

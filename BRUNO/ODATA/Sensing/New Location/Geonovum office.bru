@@ -1,0 +1,26 @@
+meta {
+  name: Geonovum office
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{Endpoint}}/Locations
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Kantoor geonovum",
+    "description": "Kantoor geonovum 3de etage, zaal 1",
+    "encodingType": "application/vnd.geo+json",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        5.371944,
+        52.152222
+      ]
+    }
+  }
+}

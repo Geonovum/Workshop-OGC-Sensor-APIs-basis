@@ -1,0 +1,30 @@
+meta {
+  name: Skip
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{Endpoint}}/Things?$skip=5
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $skip: 5
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}
+
+docs {
+  # skip
+  
+  Use $skip to specify the number of entities that should be skipped before returning the requested entities.
+  
+  Query	Options	Description
+  $skip	non-negative integer value	Specifies the number for the entities of the queried collection that must be excluded from the result.
+}

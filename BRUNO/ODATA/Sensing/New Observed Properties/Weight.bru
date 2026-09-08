@@ -1,0 +1,23 @@
+meta {
+  name: Weight
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Weight",
+    "description": "The force with which a body is attracted toward an astronomical body",
+    "definition": "https://qudt.org/vocab/quantitykind/Weight"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

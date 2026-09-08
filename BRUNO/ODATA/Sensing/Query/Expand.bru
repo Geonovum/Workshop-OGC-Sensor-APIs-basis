@@ -1,0 +1,31 @@
+meta {
+  name: Expand
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Endpoint}}/Things?$expand=Datastreams
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $expand: Datastreams
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}
+
+docs {
+  # expand 
+  
+  Use $expand query option to request inline information for related entities of the requested entity collection.
+  
+  #  Query Options 
+  
+  Description $expand comma separated list of sub-entity names or sub-entity names separated by forward slash Retrieves the specified related entities and represents it inline to the base entity.
+}

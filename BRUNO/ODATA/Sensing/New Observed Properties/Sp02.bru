@@ -1,0 +1,23 @@
+meta {
+  name: Sp02
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Sp02",
+    "description": "The percentage of hemoglobin in your blood that is carrying oxygen.",
+    "definition": "https://qudt.org/vocab/unit/sp02"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

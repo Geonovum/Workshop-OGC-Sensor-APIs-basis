@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor RCWL-1604
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "RCWL-1604",
+    "description": "Ultrasone Afstandssensor",
+    "encodingType": "application/pdf",
+    "metadata": "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4007_Web.pdf"
+  }
+}

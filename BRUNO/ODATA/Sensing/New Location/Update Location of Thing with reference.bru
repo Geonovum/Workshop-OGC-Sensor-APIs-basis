@@ -1,0 +1,25 @@
+meta {
+  name: Update Location of Thing with reference
+  type: http
+  seq: 15
+}
+
+patch {
+  url: {{Endpoint}}/Things(7)
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "Locations": [
+      {
+        "@iot.id": 35
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

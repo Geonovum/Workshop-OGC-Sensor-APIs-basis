@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor MB-090
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "MB-090",
+    "description": "Bending Detection Sensor",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.tinytronics.nl/product_files/002407_MB090.pdf"
+  }
+}

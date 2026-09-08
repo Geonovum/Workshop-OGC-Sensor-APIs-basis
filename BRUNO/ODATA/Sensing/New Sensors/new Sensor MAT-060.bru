@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor MAT-060
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "MAT-060",
+    "description": "Membrane Position Sensor",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.mouser.be/datasheet/2/13/Alpha_03112019_Position_sensor_MAT060-BXXK-231-A01-1541956.pdf"
+  }
+}

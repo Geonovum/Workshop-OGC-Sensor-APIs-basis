@@ -1,0 +1,67 @@
+meta {
+  name: new Thing with MAX-30102
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "?????",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "Locations": [
+      {
+        "name": "xxx",
+        "description": "yyy",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            6.020759,
+            50.754699
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+      {
+        "name": "Heart Beat DS",
+        "description": "Datastream for recording Heart Beat",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Beats per Minute",
+          "symbol": "BPM",
+          "definition": "https://qudt.org/vocab/unit/BEAT-PER-MIN"
+        },
+        "Sensor": {
+          "@iot.id": 6
+        },
+        "ObservedProperty": {
+          "@iot.id": 14
+        }
+      },
+      {
+        "name": "SpO2 DS",
+        "description": "Datastream for recording SpO2",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "SpO2",
+          "symbol": "SpO2",
+          "definition": "https://qudt.org/vocab/unit/SpO2"
+        },
+        "Sensor": {
+          "@iot.id": 6
+        },
+        "ObservedProperty": {
+          "@iot.id": 5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+meta {
+  name: ResultFormat
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{Endpoint}}/Observations?$resultFormat=dataArray
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $resultFormat: dataArray
+}
+
+docs {
+  # resultFormat
+  Use $resultFormat query option to return Observations in a data array format.
+  
+  Property	Options	Description
+  $resultFormat	dataArray	Enables returning Observations in data arrays.
+}

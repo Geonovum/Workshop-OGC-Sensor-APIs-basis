@@ -1,0 +1,29 @@
+meta {
+  name: Count
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{Endpoint}}/Things?$count=true
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $count: true
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}
+
+docs {
+  # count
+  Use $count query option to get the total number of result entities for the request.
+  
+  | Query	| Options	| Description |
+  | $count |	true or false	| Is used to retrieve the total number of items in a collection matching the requested entity. |
+}

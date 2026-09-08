@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor BME-280
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "BME-280",
+    "description": "Digitale Barometer Druk en Vochtigheid Sensor",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.tinytronics.nl/product_files/001511_BST-BME280_DS001-11.pdf"
+  }
+}

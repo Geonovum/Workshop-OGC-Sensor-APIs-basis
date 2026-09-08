@@ -1,0 +1,23 @@
+meta {
+  name: Altitude
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Altitude",
+    "description": "Height measurement relative to the Normaal Amsterdams Peil (NAP)",
+    "definition": "https://qudt.org/vocab/quantitykind/ElevationRelativeToNAP"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

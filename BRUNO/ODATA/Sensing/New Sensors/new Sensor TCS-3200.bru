@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor TCS-3200
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "TCS-3200",
+    "description": "RGB Kleursensor",
+    "encodingType": "application/pdf",
+    "metadata": "https://wiki.dfrobot.com/TCS3200_Color_Sensor__SKU_SEN0101_"
+  }
+}

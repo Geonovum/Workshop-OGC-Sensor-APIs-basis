@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor HMC-5883L
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "HMC-5883L",
+    "description": "3-Axis Kompas Magnetometer",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.tinytronics.nl/image/data/Producten/Sensoren/Acceleratie-gyroscoop/HMC5883L_3-Axis_Digital_Compass_IC.pdf"
+  }
+}

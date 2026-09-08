@@ -1,0 +1,23 @@
+meta {
+  name: Pressure
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Pressure",
+    "description": "Pressure is an effect which occurs when a force is applied on a surface",
+    "definition": "https://qudt.org/vocab/quantitykind/Pressure"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

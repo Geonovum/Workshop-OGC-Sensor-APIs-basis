@@ -1,0 +1,23 @@
+meta {
+  name: SoundPressureLevel
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "SoundPressureLevel",
+    "description": "Sound pressure level () or sound level is a logarithmic measure of the effective sound pressure of a sound relative to a reference value.",
+    "definition": "https://qudt.org/vocab/quantitykind/SoundPressureLevel"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

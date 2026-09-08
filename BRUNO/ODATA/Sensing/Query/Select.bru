@@ -1,0 +1,32 @@
+meta {
+  name: Select
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Endpoint}}/Observations?$select=result,phenomenonTime
+  body: none
+  auth: inherit
+}
+
+params:query {
+  $select: result,phenomenonTime
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}
+
+docs {
+  # select
+  
+  The $select query option requests specific properties of an entity from the SensorThings service. This query option is used to help reduce the amount of information returned from the server.
+  
+  | Query | Options | Description |
+  | :--- | :--- | :--- |
+  | $select | comma separated list of property names (including navigation property names) | If set, the result will include the specified properties of the SensorThing entity. |
+  
+}

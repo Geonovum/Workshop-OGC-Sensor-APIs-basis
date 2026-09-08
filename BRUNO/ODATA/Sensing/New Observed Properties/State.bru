@@ -1,0 +1,23 @@
+meta {
+  name: State
+  type: http
+  seq: 18
+}
+
+post {
+  url: {{Endpoint}}/ObservedProperties
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "State",
+    "description": "Indication of Open or Close",
+    "definition": "https://qudt.org/vocab/quantitykind/State"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

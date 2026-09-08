@@ -1,0 +1,15 @@
+meta {
+  name: Locations
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{Endpoint}}/Locations(1)
+  body: none
+  auth: inherit
+}
+
+docs {
+  The Location entity locates the Thing(s) it associated with. A Thing’s Location entity is defined as the last known location of the Thing. A Thing can have multiple Locations if all Locations are different representations of same Location with different encodingType.
+}

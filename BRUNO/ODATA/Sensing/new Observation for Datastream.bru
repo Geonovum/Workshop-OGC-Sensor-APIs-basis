@@ -1,0 +1,17 @@
+meta {
+  name: new Observation for Datastream
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{Endpoint}}/Datastreams(48)/Observations
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "result": 12.35
+  }
+}

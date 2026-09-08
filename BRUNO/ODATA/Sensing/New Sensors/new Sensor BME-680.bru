@@ -1,0 +1,20 @@
+meta {
+  name: new Sensor BME-680
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{Endpoint}}/Sensors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "BME680",
+    "description": "Low power gas, pressure, temperature & humidity sensor",
+    "encodingType": "application/pdf",
+    "metadata": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf"
+  }
+}

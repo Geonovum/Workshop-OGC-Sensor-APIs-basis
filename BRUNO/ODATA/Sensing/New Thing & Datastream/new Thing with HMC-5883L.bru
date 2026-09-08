@@ -1,0 +1,51 @@
+meta {
+  name: new Thing with HMC-5883L
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "????",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "Locations": [
+      {
+        "name": "xxx",
+        "description": "yyy",
+        "encodingType": "application/vnd.geo+json",
+        "location": {
+          "type": "Point",
+          "coordinates": [
+            6.020759,
+            50.754699
+          ]
+        }
+      }
+    ],
+    "Datastreams": [
+      {
+        "name": "Heading DS",
+        "description": "Datastream for recording heading",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+        "unitOfMeasurement": {
+          "name": "Degrees",
+          "symbol": "°",
+          "definition": "https://qudt.org/vocab/unit/DEG"
+        },
+        "Sensor": {
+          "@iot.id": 4
+        },
+        "ObservedProperty": {
+          "@iot.id": 10
+        }
+      }
+    ]
+  }
+}

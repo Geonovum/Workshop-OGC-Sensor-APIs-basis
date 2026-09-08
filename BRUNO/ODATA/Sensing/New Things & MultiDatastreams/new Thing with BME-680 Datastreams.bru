@@ -1,0 +1,71 @@
+meta {
+  name: new Thing with BME-680 Datastreams
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{Endpoint}}/Things
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "58:8C:81:AD:2D:2C",
+    "description": "XIAO ESP32 C3",
+    "properties": {},
+    "MultiDatastreams": [
+      {
+        "name": "Temperature, humudity, pressure and AQI Temperature DS",
+        "description": "MultiDatastream for recording temperature, humudity, pressure and AQI",
+        "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation",
+        "multiObservationDataTypes": [
+          "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+          "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+          "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+          "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"
+        ],
+        "unitOfMeasurements": [
+          {
+            "name": "degree Celsius",
+            "symbol": "°C",
+            "definition": "https://qudt.org/vocab/unit/DEG_C"
+          },
+          {
+            "name": "Percent relative humidity",
+            "symbol": "% rH",
+            "definition": "https://qudt.org/vocab/unit/PERCENT_RH"
+          },
+          {
+            "name": "Atmospheric pressure",
+            "symbol": "hPa",
+            "definition": "https://qudt.org/vocab/unit/HectoPA"
+          },
+          {
+            "name": "Air Quality Index",
+            "symbol": "",
+            "definition": "https://qudt.org/vocab/unit/aqi"
+          }
+        ],
+        "Sensor": {
+          "@iot.id": 3
+        },
+        "ObservedProperties": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          },
+          {
+            "id": 4
+          },
+          {
+            "id": 17
+          }
+        ]
+      }
+    ]
+  }
+}

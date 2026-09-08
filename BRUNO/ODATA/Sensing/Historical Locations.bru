@@ -1,0 +1,15 @@
+meta {
+  name: Historical Locations
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{Endpoint}}/Locations
+  body: none
+  auth: inherit
+}
+
+docs {
+  A Thing’s HistoricalLocation entity set provides the times of the current (i.e., last known) and previous locations of the Thing.
+}
