@@ -23,7 +23,7 @@
 
 #include <HTTPClient.h>  // ships with ESP32 library, no extra lib needed
 
-const char* serviceHost = "https://xxxx/FROST-Server";
+const char* serviceHost = "https://xxx/FROST-Server";
 const char* serviceVersion = "v1.1";
 
 HTTPClient http;
@@ -107,11 +107,15 @@ void transmitValue(float value, char* UoM, uint datastreamId) {
     Serial.print(" with body ");
     Serial.println(body);
 
+    digitalWrite(LED_BUILTIN, LOW);
+
     http.begin(url);
     http.addHeader("Content-Type", "application/json");
     auto httpCode = http.POST(body);
     Serial.printf("[HTTP] Result of HTTP POST %d\n", httpCode);
     http.end();
+
+    digitalWrite(LED_BUILTIN, HIGH);
 
   } else {
     // WiFi not connected - log the value for debugging

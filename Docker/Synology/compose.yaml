@@ -1,0 +1,58 @@
+# FROST-Server all-in-one, tuned for Synology Container Manager
+# (RS1221+ / v1000 / kernel 4.4 / Btrfs).
+#
+# Upstream (postgis 18 + uuid-ossp one-shot) fails on this NAS. See comments.
+services:
+  web:
+    image: fraunhoferiosb/frost-server:latest
+    restart: unless-stopped
+    environment:
+      # Must NOT include /v1.1 � FROST appends the version itself.
+      - serviceRootUrl=https://stapi.delathouwer.me/FROST-Server
+      - plugins_modelLoader_enable=true
+      - plugins_multiDatastream_enable=false
+      - plugins_actuation_enable=false
+      - http_cors_enable=true
+      - http_cors_allowed_origins=*
+      # Quote the list: Container Manager may otherwise split on commas.
+      - "http_cors_allowed_methods=GET,HEAD,POST,PATCH,PUT,DELETE,OPTIONS"
+      - persistence_db_driver=org.postgresql.Driver
+      - persistence_db_url=jdbc:postgresql://database:5432/sensorthings
+      - persistence_db_username=sensorthings
+      - persistence_db_password=eeee
+      - persistence_autoUpdateDatabase=true
+    ports:
+      # Host 8081: DSM already uses 8080. Container still listens on 8080.
+      - 8081:8080
+      - 1883:1883
+    depends_on:
+      database:
+        condition: service_healthy
+
+  database:
+    # PG 18 images change VOLUME to /var/lib/postgresql and turn
+    # /var/lib/postgresql/data into a symlink. runc on Synology Btrfs then
+    # fails with: "error mounting ... to rootfs at /var/lib/postgresql/data:
+    # no such file or directory". Stick to 16/17 and the old data path.
+    image: postgis/postgis:16-3.5-alpine
+    restart: unless-stopped
+    shm_size: 256mb
+    environment:
+      - POSTGRES_DB=sensorthings
+      - POSTGRES_USER=sensorthings
+      - POSTGRES_PASSWORD=eeee
+      # Subdirectory so leftover files (PG 18 remnants, lost+found on Synology
+      # bind mounts) do not make initdb refuse an existing non-empty directory.
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      # New volume name = empty cluster. Delete the old
+      # <project>_postgis16_data volume in Container Manager to reclaim disk.
+      - postgis16_data_v2:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d sensorthings -U sensorthings"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  postgis16_data_v2:

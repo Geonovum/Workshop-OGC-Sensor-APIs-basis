@@ -1,4 +1,4 @@
 #pragma once
 
-#define SECRET_SSID "xxxx"
-#define SECRET_PASS "xxxx"
+#define SECRET_SSID "xx"
+#define SECRET_PASS "xxx"

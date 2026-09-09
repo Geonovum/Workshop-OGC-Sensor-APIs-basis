@@ -20,8 +20,7 @@ unsigned long wifiStartTime = 0;    // Timestamp when WiFi connection attempt st
 bool wifiConnected = false;         // Current WiFi connection status
 
 void setupWiFi() {
-
-    Serial.println(F("[WiFi] Initializing..."));
+  Serial.println(F("[WiFi] Initializing..."));
 
   uint64_t chipid = ESP.getEfuseMac();  //The chip ID is essentially its MAC address(length: 6 bytes).
   Serial.print("[Eth ] MAC address: ");
@@ -41,9 +40,14 @@ void loopWifi() {
     Serial.println("[WiFi] Connected!");
     Serial.print("[WiFi] IP address: ");
     Serial.println(WiFi.localIP());
-  } else if (wifiConnected && WiFi.status() != WL_CONNECTED) {
+
+    digitalWrite(LED_BUILTIN, HIGH);
+  } 
+  else if (wifiConnected && WiFi.status() != WL_CONNECTED) {
     wifiConnected = false;
     Serial.println("[WiFi] Connection lost!");
+
+    digitalWrite(LED_BUILTIN, LOW);
   }
 
   // Reconnect if connection is lost for too long
